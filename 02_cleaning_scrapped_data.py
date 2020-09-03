@@ -3,7 +3,7 @@ import itertools as it
 import numpy as np
 
 names_cleaned = names.copy(deep=True)
-#names_cleaned.to_excel('C:/Users/Mathu/Desktop/GNS Automation/names_cleaned.xlsx', index=True)
+#names_cleaned.to_excel('names_cleaned.xlsx', index=True)
 
 # Remove crawler tags
 names_cleaned = names_cleaned[~names_cleaned.Name.str.contains('googletag')]
@@ -20,8 +20,8 @@ names_cleaned = names_cleaned[~names_cleaned['Name'].isnull()]
 # Slice only columns 'Name' and 'Origin'
 names_cleaned = names_cleaned.loc[:,['Name','Origin','Similar']]
 
-# To split the similar names in 'Similar' column and add that to the main data column
-# Slice only rows having non NA values in 'Similar' columns
+# To split the similar names in 'Similar' column and add that to the main data
+# column Slice only rows having non NA values in 'Similar' columns
 names_cleaned_only_non_null = names_cleaned[~names_cleaned['Similar'].isnull()]
 
 # Initiate a dataframe to append the split names data into
@@ -49,36 +49,19 @@ def name_splitter(names_to_be_split, origin, split_by):
     global final_names_split_df
     final_names_split_df = final_names_split_df.append(df, ignore_index = True)
 
-
-
-
-
-# Loop to split all rows of 'Similar' column and to add them to the intermediate dataframe 
-# by using 'names_splitter' funciton  
-
-
-
-# Loop to split all rows of 'Name' column which has multiple names in it 
-# and to add them to the intermediate dataframe 
-# by using 'names_splitter' funciton  
-
+# Possible other cleaning steps
+# Split all rows of 'Similar' column and to add them to the intermediate dataframe by using 'names_splitter' funciton  
+# Split all rows of 'Name' column which has multiple names in it and to add them to the intermediate dataframe by using 'names_splitter' funciton  
+# Reduce origin names by clubbing similar ones
+# Remove duplicate names
+# Remove symbols from dataset
+# Remove accent marks from names
 
 # Append the intermediate dataframe to the main dataframe
 names_cleaned = names_cleaned.append(final_names_split_df)
 
 # Remove 'Similar' column
 names_cleaned = names_cleaned.loc[:,['Name','Origin']]
-
-# Reduce origin names by clubbing similar ones
-
-# Remove duplicate names
-
-# Remove symbols from dataset
-
-# Remove accent marks from names
-
-
-
 
 print(final_names_split_df)
 
