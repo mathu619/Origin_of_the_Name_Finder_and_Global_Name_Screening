@@ -3,7 +3,7 @@ import time
 import numpy as np
 
 # Import the pre-prepared webpage index specific to this scrape
-webpages_index = pd.read_csv('C:/Users/Mathu/Desktop/GNS Automation/webpages_index.csv')
+webpages_index = pd.read_csv('webpages_index.csv')
 #print(webpages_index)
 
 # Initiate temp dataframe file to collect scrapped tables
@@ -44,9 +44,4 @@ for i in urls2:
     print(i,'done')
 
 # Export the collected data to a excel file in disc
-names.to_excel('C:/Users/Mathu/Desktop/GNS Automation/Names_Master.xlsx', index=False)
-
-#####################################################################################
-# Scrapped full raw data
-#names_full = names.copy(deep=True)
-#names.to_excel('C:/Users/Mathu/Desktop/GNS Automation/Names_Master_Full.xlsx', index=False)
+names.to_excel('C:/Users/Mathu/Desktop/GNS Automation/Names_Master_Full.xlsx', index=False)
