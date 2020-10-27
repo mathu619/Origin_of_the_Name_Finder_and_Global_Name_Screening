@@ -1,4 +1,4 @@
-# Name_Screening_Helper
+# Name_Origin_finder_and_comparer
 
 These codes can be used for name screening for various purposes in which the below activities are to be automated
 1. Finding of the origin of the name. Example 'Nguyen' has its origin in Vietnam
@@ -9,7 +9,7 @@ Module 1 Name Scrapper - scraps a baby names website to collect all the names in
 
 Module 2 Cleaning Scrapped Data - gives few codes to make basic cleaning of the scrapped data
 
-Module 3 Name Origin Finder - provides codes and a function using Fuzzy Wuzzy library to find the origins of the names provided by making a fuzzy search of names between the names provided and scrapped database
+Module 3 Name Origin Finder using soft NLP - provides codes and a function using Levenshtein Distance to calculate the differences between sequences to find the origins of the names provided by making a fuzzy search of names between the names provided and scrapped database
 
 Module 4 Name Comparer by Column - helps in basic code in comparing names between columns by spelling consistency
 
